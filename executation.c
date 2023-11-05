@@ -15,7 +15,8 @@ void execute(char *prompt)
 	else if (child == 0)
 	{
 	char *arguments[] = {prompt, NULL};
-	if(execve(prompt, arguments, NULL) == -1)
+
+	if (execve(prompt, arguments, NULL) == -1)
 	{
 		perror("execve failed");
 		exit(EXIT_FAILURE);
