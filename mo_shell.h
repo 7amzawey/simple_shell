@@ -14,5 +14,5 @@
 void print(const char *str);
 void show_prompt(void);
 void take_input(char *prompt);
-void execute(char *prompt);
+void execute(int argc, char *argv[]);
 #endif /* end of the header file */

@@ -5,5 +5,5 @@
  */
 void print(const char *str)
 {
-	write(1, &str, strlen(str));
+	write(1, str, strlen(str));
 }
