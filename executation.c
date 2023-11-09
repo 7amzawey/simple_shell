@@ -4,11 +4,10 @@
  * @argc: is the number of arguments
  * @argv: is the vector of arguments
  */
-void execute(int argc, char *argv[])
+void execute(char **argv)
 {
-	if (argc >= 2)
-	{
-	char *path = argv[1];
+	
+	char *path = argv[0];
 	pid_t child = fork();
 
 	if (child == -1)
@@ -18,7 +17,7 @@ void execute(int argc, char *argv[])
 	}
 	else if (child == 0)
 	{
-	if (execve(path, &argv[1], NULL) == -1)
+	if (execve(path, argv, NULL) == -1)
 	{
 		perror("execve failed");
 		exit(EXIT_FAILURE);
@@ -28,5 +27,5 @@ void execute(int argc, char *argv[])
 	{
 		wait(NULL);
 	}
-	}
+	
 }

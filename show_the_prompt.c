@@ -4,5 +4,5 @@
  */
 void show_prompt(void)
 {
-	print("#mo_shell$\n");
+	print("#mo_shell$ ");
 }

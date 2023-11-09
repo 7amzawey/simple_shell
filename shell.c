@@ -7,17 +7,15 @@
 int main(void)
 {
 	char prompt[140];
-	char *argv[3];
-
-	argv[0] = "program";
-	argv[2] = NULL;
-
+	char **argv;
+	
 	while (1)
 	{
 	show_prompt();
 	take_input(prompt);
-	argv[1] = prompt;
-	execute(2, argv);
+	argv = step_two_strtow(print_with_no_spaces(prompt));
+	execute(argv);
+	free(argv);
 	}
 	return (0);
 }

@@ -11,8 +11,13 @@
 /*
  * the prototypes
  */
+int _strlen(char *str);
+char *_strcpy(char *str1, char *str2);
+char *_strcat(char *begining, char *end);
 void print(const char *str);
 void show_prompt(void);
 void take_input(char *prompt);
-void execute(int argc, char *argv[]);
+void execute(char **argv);
+char *print_with_no_adds(char *str, char *d);
+char **step_two_strtow(char *string_with_no_spaces, char *d);
 #endif /* end of the header file */
