@@ -1,14 +1,17 @@
 #include "mo_shell.h"
 /**
- * execute - that will be the one who executes the cds
- * @argc: is the number of arguments
+ * execute - will execuate the commands
  * @argv: is the vector of arguments
+ * Return: 0 if successeded to execute the command
  */
-void execute(char **argv)
+int execute(char **argv)
 {
-	
 	char *path = argv[0];
-	pid_t child = fork();
+	pid_t child;
+
+	if (path == NULL)
+		return (0);
+	child = fork();
 
 	if (child == -1)
 	{
@@ -27,5 +30,5 @@ void execute(char **argv)
 	{
 		wait(NULL);
 	}
-	
+	return (0);
 }

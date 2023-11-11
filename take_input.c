@@ -2,8 +2,9 @@
 /**
  * take_input - this one will take the input
  * @prompt: will be the input
+ * Return: the input
  */
-void take_input(char *prompt)
+char *take_input(char *prompt)
 {
 	size_t len;
 
@@ -14,4 +15,5 @@ void take_input(char *prompt)
 	{
 		prompt[len - 1] = '\0';
 	}
+	return (prompt);
 }
