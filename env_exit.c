@@ -21,7 +21,11 @@ void exiting(char *command)
 	}
 	else if (argv != NULL && _strcmp(argv[0], "exit") == 0)
 	{
-		if (argv[1] != NULL)
+		if (_strcmp(argv[0], "exit") == 0 && argv[1] == NULL)
+		{
+			exit(0);
+		}
+		else if (argv[1] != NULL)
 		{
 		int num = _atoi(argv[1]);
 

@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 extern char **environ;
 /*
  * the string prototypes
@@ -27,6 +28,7 @@ void show_prompt(void);
 char *_getline(char *lineptr);
 char *take_input(char *prompt);
 void exiting(char *command);
+int _setenv(char *command);
 int execute(char **argv);
 char *find_command(char *command);
 char *print_with_no_adds(char *str, char *d);
