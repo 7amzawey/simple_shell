@@ -4,7 +4,8 @@
  * Return: 0 if success
  */
 int main(void)
-{
+{	
+	int i, j;
 	char prompt[150];
 	char *command_line;
 	char *clean_command;
@@ -25,6 +26,22 @@ int main(void)
 	exiting(last_argv[0]);
 	last_argv[0] = command;
 	execute(last_argv);
+	for (i = 0; argv[i] != NULL; i++)
+	{
+		free(argv[i]);
 	}
+	free(argv);
+	argv = NULL;
+	}
+	for (j = 0; last_argv[j] != NULL; j++)
+	{
+		free(last_argv[j]);
+	}
+	free(last_argv);
+	last_argv = NULL;
+	free(clean_command);
+	clean_command = NULL;
+	free(command_line);
+	command_line = NULL;
 	return (0);
 }
