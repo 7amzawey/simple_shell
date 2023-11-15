@@ -52,20 +52,12 @@ char **cd_sep(char **argv)
 	char **new_argv = malloc(sizeof(char *) * 10);
 	char **last_argv = malloc(sizeof(char *) * 10);
 
-	if (last_argv == NULL || new_argv == NULL)
-	{
-		return (NULL);
-	}
-	if (argv == NULL)
-	{
-		return (NULL);
-	}
+	if (last_argv == NULL || new_argv == NULL || argv == NULL)
+	return (NULL);
 	while (argv[i] != NULL)
 	{
 	if (_strcmp(argv[i], "&&") == 0)
-	{
 	r = and_operator(argv, i);
-	}
 	if (_strcmp(argv[i], ";") == 0 || _strcmp(argv[i], "||") == 0)
 	{
 		for (j = 0; k < i; j++)
@@ -79,9 +71,7 @@ char **cd_sep(char **argv)
 		execute(new_argv);
 		j = 0;
 		if (argv[i + 1] != NULL)
-		{
 		k++;
-		}
 	}
 	i++;
 	}

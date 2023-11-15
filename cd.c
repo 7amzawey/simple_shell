@@ -2,20 +2,19 @@
 /**
  * cd - this function handles going from one directory
  * to another on the shell
- * &command: this the command that we will be handling.
+ * @command: this the command that we will be handling.
  * Return: 0 on success.
  */
 int cd(char *command)
 {
 	size_t size = 1024;
+	int k;
 	char *buffer = malloc(size);
 	char *clean_command;
 	char **argv;
 
 	if (buffer == NULL)
-	{
-		return (-1);
-	}
+	return (-1);
 	clean_command = print_with_no_adds(command, " ");
 	argv = step_two_strtow(clean_command, " ");
 
@@ -42,5 +41,9 @@ int cd(char *command)
 		}
 	}
 	free(buffer);
+	for (k = 0; argv[k] != NULL; k++)
+	free(argv[k]);
+	free(argv);
+	argv = NULL;
 	return (0);
 }

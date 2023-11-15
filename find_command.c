@@ -12,6 +12,7 @@ char *find_command(char *command)
 	char **directory = step_two_strtow(clean_path, ":");
 	char *full_path = NULL;
 	int i;
+	int m = 0;
 
 	for (i = 0; directory[i] != NULL; i++)
 	{
@@ -21,11 +22,15 @@ char *find_command(char *command)
 	_strcat(full_path, command);
 	if (access(full_path, X_OK) == 0)
 	{
+		m = m + i;
 		return (full_path);
 	}
 	free(full_path);
 	full_path = NULL;
 	}
+	if (m == 0)
+	perror(command);
+
 	for (i = 0; directory[i] != NULL; i++)
 	{
 		free(directory[i]);

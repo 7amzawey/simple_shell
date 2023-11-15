@@ -7,6 +7,7 @@
  */
 int _setenv(char *command)
 {
+	int j;
 	char *clean_command = print_with_no_adds(command, " ");
 	char **argv = step_two_strtow(clean_command, " ");
 
@@ -32,5 +33,11 @@ int _setenv(char *command)
 			}
 		}
 	}
+	for (j = 0; argv[j] != NULL; j++)
+	{
+	free(argv[j]);
+	}
+	free(argv);
+	argv = NULL;
 	return (0);
 }

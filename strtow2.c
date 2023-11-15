@@ -8,31 +8,31 @@
  */
 char *print_with_no_adds(char *str, char *d)
 {
-	int i = 0;
-	int j = 0;
-	char *word = malloc(strlen(str) + 1);
+int i = 0;
+int j = 0;
+char *word = malloc(strlen(str) + 1);
 
-	while (str[i] == *d)
-		i++;
-	while (str[i] != '\0')
-	{
-		if ((str[i] == *d && str[i + 1] == *d) || (str[i] == *d && str[i + 1] == '\0'))
-		{
-		i++;
-		}
-		else
-		{
-		word[j] = str[i];
-		j++;
-		i++;
-		}
-	}
-	if (word[j] == *d)
-	{
-		word[j] = '\0';
-	}
-	word[j] = '\0';
-	return (word);
+while (str[i] == *d)
+	i++;
+while (str[i] != '\0')
+{
+if ((str[i] == *d && str[i + 1] == *d) || (str[i] == *d && str[i + 1] == '\0'))
+{
+i++;
+}
+else
+{
+word[j] = str[i];
+j++;
+i++;
+}
+}
+if (word[j] == *d)
+{
+word[j] = '\0';
+}
+word[j] = '\0';
+return (word);
 }
 /**
  * **step_two_strtow - is taking the string clean and
@@ -71,6 +71,7 @@ char **step_two_strtow(char *string_with_no_spaces, char *d)
 	if (string_with_no_spaces[m] != '\0')
 		m++;
 	}
+	free(string_with_no_spaces);
 	tokens[o] = NULL;
 	return (tokens);
 }
