@@ -18,6 +18,7 @@ int cd(char *command)
 	}
 	clean_command = print_with_no_adds(command, " ");
 	argv = step_two_strtow(clean_command, " ");
+
 	if (argv == NULL)
 	{
 		free(buffer);

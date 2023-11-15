@@ -10,12 +10,13 @@ int execute(char **argv)
 	pid_t child;
 
 	if (path == NULL)
-		return (0);
+	return (0);
 	child = fork();
 
 	if (child == -1)
 	{
 		perror("fork failed");
+		return (-1);
 		exit(EXIT_FAILURE);
 	}
 	else if (child == 0)
@@ -23,6 +24,7 @@ int execute(char **argv)
 	if (execve(path, argv, NULL) == -1)
 	{
 		perror("execve failed");
+		return (-1);
 		exit(EXIT_FAILURE);
 	}
 	}
