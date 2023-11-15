@@ -1,4 +1,4 @@
-#include "mo_shell.h"
+#include "monty.h"
 /**
  * _strncmp - compares two string to a certain(n)
  * point

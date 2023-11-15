@@ -1,4 +1,4 @@
-#include "mo_shell.h"
+#include "monty.h"
 /**
  * *find_command - this function finds the path of the
  * command

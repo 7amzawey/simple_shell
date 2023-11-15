@@ -1,5 +1,5 @@
-#ifndef MO_SHELL_H
-#define MO_SHELL_H
+#ifndef MONTY_H
+#define MONTY_H
 /*
  * the libraries
  */
