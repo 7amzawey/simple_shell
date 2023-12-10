@@ -71,7 +71,6 @@ char **step_two_strtow(char *string_with_no_spaces, char *d)
 	if (string_with_no_spaces[m] != '\0')
 		m++;
 	}
-	free(string_with_no_spaces);
 	tokens[o] = NULL;
 	return (tokens);
 }
